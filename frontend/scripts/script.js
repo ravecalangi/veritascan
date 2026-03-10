@@ -90,10 +90,9 @@ function closeGsModal() {
   }, 550);
 }
 
-getStartedBtn.addEventListener('click', openGsModal);
-gsClose.addEventListener('click', closeGsModal);
-
-gsOverlay.addEventListener('click', (e) => {
+getStartedBtn?.addEventListener('click', openGsModal);
+gsClose?.addEventListener('click', closeGsModal);
+gsOverlay?.addEventListener('click', (e) => {
   if (e.target === gsOverlay) closeGsModal();
 });
 
