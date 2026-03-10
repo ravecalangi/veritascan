@@ -95,7 +95,7 @@ form.addEventListener('submit', async (e) => {
     formData.append('image', imageInput.files[0]);
 
     try {
-        const res  = await fetch('http://localhost:3000/analyze', { method: 'POST', body: formData });
+        const res  = await fetch('https://veritascan.onrender.com/analyze', { method: 'POST', body: formData });
         const data = await res.json();
 
         loading.style.display = 'none';
@@ -294,7 +294,7 @@ analyzeTextBtn.addEventListener('click', async () => {
     analyzeTextBtn.disabled      = true;
 
     try {
-        const res = await fetch('http://localhost:3000/analyze-text', {
+        const res = await fetch('https://veritascan.onrender.com/analyze-text', {
             method : 'POST',
             headers: { 'Content-Type': 'application/json' },
             body   : JSON.stringify({ text })
