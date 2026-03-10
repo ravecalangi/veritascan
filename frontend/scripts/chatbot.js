@@ -259,7 +259,7 @@ async function loadTrendingNews() {
   `).join("");
 
   try {
-    const res  = await fetch("http://localhost:3000/trending");
+    const res  = await fetch("https://veritascan.onrender.com/trending");
     const data = await res.json();
 
     if (!data.items?.length) {
@@ -834,7 +834,7 @@ export async function sendToChatbot(userMsg, existingP = null, isTrending = fals
     console.log("[DEMO MODE] Triggered for keywords:", demoMatch.keywords);
 
     const [refData] = await Promise.all([
-      fetch("http://localhost:3000/chat", {
+      fetch("https://veritascan.onrender.com/chat", {
         method : "POST",
         headers: { "Content-Type": "application/json" },
         body   : JSON.stringify({
@@ -874,7 +874,7 @@ export async function sendToChatbot(userMsg, existingP = null, isTrending = fals
 
   /* ── NORMAL MODE — real AI call ── */
   try {
-    const response = await fetch("http://localhost:3000/chat", {
+    const response = await fetch("https://veritascan.onrender.com/chat", {
       method : "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -1135,7 +1135,7 @@ if (linkBtn && linkModal) {
 
     if (!content) {
       try {
-        const r    = await fetch("http://localhost:3000/fetch-url", {
+        const r    = await fetch("https://veritascan.onrender.com/fetch-url", {
           method: "POST", headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ url })
         });
@@ -1170,7 +1170,7 @@ if (linkBtn && linkModal) {
     c2.scrollTop = c2.scrollHeight;
 
     try {
-      const response = await fetch("http://localhost:3000/chat", {
+      const response = await fetch("https://veritascan.onrender.com/chat", {
         method : "POST",
         headers: { "Content-Type": "application/json" },
         body   : JSON.stringify({
